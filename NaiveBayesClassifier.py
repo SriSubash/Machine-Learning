@@ -5,10 +5,10 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 import pandas as pd
 
-data = pd.read_csv("Lumpy skin disease data.csv")
+data = pd.read_csv("your_csv_file")
 
-X = data[['wet','vap']]
-y = data['lumpy']
+X = data[['label1','label2']].values
+y = data['target'].values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -66,10 +66,10 @@ class NaiveBayes:
         predictions = [self._predict_instance(x) for x in X]
         return np.array(predictions)
 
-data = pd.read_csv("Lumpy skin disease data.csv")
+data = pd.read_csv("your_csv_file")
 
-X = data[['wet','vap']].values
-y = data['lumpy'].values
+X = data[['label1','label2']].values
+y = data['target'].values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
